@@ -1,0 +1,141 @@
+html {
+    background: #4d3335;
+    //background-image: -webkit-radial-gradient(-10% 50%, circle, #1B2E41, rgba(255, 255, 255, 0)), -webkit-radial-gradient(50% 50%, circle, rgba(255, 255, 255, 0.63), #57646e), -webkit-radial-gradient(110% 50%, circle, #2B3846, rgba(255, 255, 255, 0));
+    background-image: radial-gradient(#c0c0c3, #494a4d);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+body {
+    font-family:'PT Sans', sans-serif;
+    background: none;
+
+}
+.dropdown{
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+.form-group{
+    background-image: radial-gradient(#d5dcdd, #f3fdff);
+}
+
+.dropdown-menu {
+    background-image: radial-gradient(#8f8fff, #f3fdff);
+    opacity: 0.9;
+}
+
+#navverheader{
+  background-image: radial-gradient(#7f8fc3, #f9f6ff);
+}
+#menuImg{
+    margin: 2px auto;
+}
+.slider{
+    opacity: 0.7;
+    background-image:linear-gradient(#ff8f4c, #ff3349, #a3fff5);
+    margin: auto;
+    transition: all 0.5s ease;
+
+}
+.slider:hover{
+    background-image: linear-gradient(#6aff60, #7f5eff, #a3fff5);
+}
+@media (min-width: 1200px) {
+    .slider {
+        height:500px ;
+        max-width: 1000px;
+    }
+}
+
+
+.navbar{
+    background-color: #C3A9A9;
+    border-color: #F5F0F0;
+}
+.navbar-buffer{
+    width: auto;
+}
+.img-header{
+    height: auto;
+    max-width: 100%;
+    opacity: 0.5;
+}
+ul.nav-tabs.nav-justified>.active>a, ul.nav-tabs.nav-justified>.active>a:hover {
+    border-color: #FFF;
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes walk {
+    from {
+        -webkit-transform: translateX(0);
+    }
+    to {
+        -webkit-transform: translateX(10);
+    }
+}
+
+.navbar-name:hover {
+    -webkit-animation: walk 2s infinite linear;
+
+}
+.navbar-name{
+    color: #555555;
+    font-family: Geogia,'PT Sans';
+    font-size: 3rem;
+    box-shadow: 2px 2px 2px #835688;
+    padding: 6px;
+    background-color: #b8bac3;
+    border-color: #eaF0f5;
+    border-radius: 5px;
+    opacity: 0.7;
+    TrAnsform: skew(-20deg);
+    background-image: radial-gradient(#b8bac3, #f5cba9);
+    transition: all 0.5s ease;
+
+
+
+}
+#footer {
+    height: auto;
+    max-width: 100%;
+
+    z-index: 2000;
+    position: static;
+    left: 50%;
+    bottom: 1%;
+    margin-left: auto;
+}
+#footer .address{
+    float: left;
+    padding: 2rem;
+    margin: 2px auto;
+}
+#footer .phone {
+    color: #e2494b;
+
+    padding: 2rem;
+    margin: 2px auto;
+}
+.sectionProp{
+    Display: none;
+    transition: display 1s ease;
+}
+.tab-content {
+    background: #FFF;
+    padding: 10px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 0 10px #FFF;
+    background-image: radial-gradient(#fbf8ff, #494d3d);
+
+}
+.btn.btn-default{
+    float: right;
+}

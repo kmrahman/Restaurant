@@ -1,0 +1,16 @@
+2015-02-11 15:31:05,455 [Worker-2] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: KitchenApp:KitchenApp:0.0.1-SNAPSHOT @ C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\pom.xml.
+2015-02-11 15:31:06,483 [Worker-3] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: KitchenApp:KitchenApp:0.0.1-SNAPSHOT @ C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\pom.xml.
+2015-02-11 15:31:09,778 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-02-11 15:31:09,782 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: KitchenApp:KitchenApp:0.0.1-SNAPSHOT @ C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\pom.xml.
+2015-02-11 15:31:09,783 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\src\main\resources
+2015-02-11 15:31:09,787 [Worker-3] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-02-11 15:31:09,788 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\src\test\resources
+2015-02-11 15:31:10,489 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: KitchenApp:KitchenApp:0.0.1-SNAPSHOT @ C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\pom.xml.
+2015-02-11 15:31:12,731 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-02-11 15:31:12,733 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\src\main\resources
+2015-02-11 15:31:12,755 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-02-11 15:31:12,756 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\src\test\resources
+2015-02-11 15:33:05,159 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-02-11 15:33:05,160 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\src\main\resources
+2015-02-11 15:33:05,162 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2015-02-11 15:33:05,163 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Sabid\Documents\GitHub\Restaurant\KitchenApp\src\test\resources

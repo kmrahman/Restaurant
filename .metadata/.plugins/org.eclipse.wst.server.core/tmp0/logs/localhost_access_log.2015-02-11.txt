@@ -1,0 +1,11 @@
+127.0.0.1 - - [11/Feb/2015:15:33:48 -0600] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/home.html HTTP/1.1" 200 28262
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/css/bootstrap.min.css HTTP/1.1" 200 117154
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/css/myStyle.css HTTP/1.1" 200 2897
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/images/imgHeader.jpg HTTP/1.1" 200 3194980
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/scripts/app.js HTTP/1.1" 200 4531
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/scripts/myJS.js HTTP/1.1" 200 2965
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/scripts/bootstrap.min.js HTTP/1.1" 200 35458
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/images/menu.jpg HTTP/1.1" 200 316854
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:27 -0600] "GET /KitchenApp/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1" 200 18028
+0:0:0:0:0:0:0:1 - - [11/Feb/2015:15:40:28 -0600] "GET /favicon.ico HTTP/1.1" 404 1016
