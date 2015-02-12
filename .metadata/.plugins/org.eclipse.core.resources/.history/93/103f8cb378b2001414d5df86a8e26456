@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html ng-app lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Kitchen Restaurant</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+<nav  class="navbar">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header ">
+            <a href="home.html">  <p class="navbar-name" >
+              <span class="" href="home.html"></span> Kitchen Restaurant</p></a>
+        </div>
+        <div class="navbar-buffer" id="navbar-collapse-buffer" >
+        </div>
+        <div class="navbar-collapse collapse" id="navverheader" style="height: 1px;">
+            <ul class="nav navbar-nav navbar-right">
+                <a class="navbar-brand" href="#">
+                    <span class="glyphicon glyphicon-cutlery"></span></a>
+                <li>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuUser" data-toggle="dropdown" aria-expanded="true">
+                            Reservation
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropNew">New Reservation</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropEdit">Edit Reservation</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropCancel">Cancel Reservation</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a class="menu" id="menuBtn" alt="Menu"> Menu </a>
+                </li>
+                <li> <!-- Owner Home: only displayed to user logged in -->
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                            Owner Home
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropReserve">Reservation</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropSeating">Seating</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropProfile">Profile</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropApp">App settings</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="dropContact">Contact List</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+
+                <li><a class="login" id="loginHeader"  > Login </a>
+                </li>
+                <li><a href="#" id="contactUs"> Contact Us </a>
+                </li>
+            </ul>
+         </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+ <div>
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h1>Hello {{yourName}}!</h1>
+    </div>
+<!-- new reservation -->
+<section class="sectionProp" id="new_edit">
+    <div class="container" id="home">
+        <ul class="nav nav-tabs nav-justified">
+            <li ><a href="#guest" data-toggle="tab">Reservation</a>
+            </li>
+        </ul>
+        <div id="content" class="tab-content">
+            <div class="tab-pane active" id="guest">
+                <form role="form">
+                    <div class="alert alert-success" display="none" id="reserveSuccess" role="alert">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reserveName">Name:</label>
+                        <input type="text" class="form-control" id="reserveName" placeholder="Enter Full Name">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveDate">Date:</label>
+                                <input type="date" class="form-control" id="reserveDate" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveTime">Time:</label>
+                                <input type="time" class="form-control" id="reserveTime" placeholder="HH:MM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveEmail">Email:</label>
+                                <input type="email" class="form-control" id="reserveEmail" placeholder="example@domain.com">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reservePhone">Phone:</label>
+                                <input type="tel" class="form-control" id="reservePhone" placeholder="Enter Your Phone">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="reserveSize">Party Size:</label>
+                                <input type="number" class="form-control" id="reserveSize" placeholder="# Guests">
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="form-group">
+                                <label for="reserveComment">Comments:</label>
+                                <input type="email" class="form-control" id="reserveComment" placeholder="e.g. Birthday, Anniversary etc.">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-default" type="button" id="btn_addReservation" aria-expanded="true">
+                        Reserve
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- edit reservation -->
+<section class="sectionProp" id="editReserve">
+    <div class="container" >
+        <ul class="nav nav-tabs nav-justified">
+            <li ><a href="#guest" data-toggle="tab">Reservation</a>
+            </li>
+        </ul>
+        <div  class="tab-content">
+            <div class="tab-pane active" >
+                <form role="form">
+                    <div>
+                        <input type="text" id="reserveEditCNF" placeholder="Enter your confirmation number.">
+                        <button id="btn_getReservation">Find Reservation</button>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reserveNameEdit">Name:</label>
+                        <input type="text" class="form-control" id="reserveNameEdit" placeholder="Enter Full Name">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveDate">Date:</label>
+                                <input type="date" class="form-control" id="reserveDateEdit" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveTime">Time:</label>
+                                <input type="time" class="form-control" id="reserveTimeEdit" placeholder="HH:MM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveEmail">Email:</label>
+                                <input type="email" class="form-control" id="reserveEmailEdit" placeholder="example@domain.com">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reservePhone">Phone:</label>
+                                <input type="tel" class="form-control" id="reservePhoneEdit" placeholder="Enter Your Phone">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="reserveSize">Party Size:</label>
+                                <input type="number" class="form-control" id="reserveSizeEdit" placeholder="# Guests">
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="form-group">
+                                <label for="reserveComment">Comments:</label>
+                                <input type="email" class="form-control" id="reserveCommentEdit" placeholder="e.g. Birthday, Anniversary etc.">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-default" type="button" id="btn_EditReservation" aria-expanded="true">
+                        Reserve
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- cancel reservation -->
+<section class="sectionProp" id="cancel">
+    <div class="container" id="cancel_container">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#cancel" data-toggle="tab">Cancel Reservation</a>
+            </li>
+        </ul>
+
+        <div id="content_cancel" class="tab-content">
+            <div class="tab-pane active" id="edit/cancel">
+
+
+                <form role="form">
+                    <div class="alert alert-success" display="none" id="cancelSuccess" role="alert">
+
+                    </div>
+                
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="reserveID">Reservation ID:</label>
+                                    <input type="text" class="form-control" id="reserveID" placeholder="Enter reservation ID">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-default" type="button" id="cancelbtn" aria-expanded="true">
+                        Cancel
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- owner login -->
+<section class="sectionProp" id="loginSection">
+    <div class="container" id="login_container">
+
+        <div id="content_login" class="tab-content">
+            <div class="tab-pane active" id="login">
+
+
+                <form role="form">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="loginID">User ID: </label>
+                                    <input type="text" class="form-control" id="loginID" placeholder="Enter your login ID: ">
+                                </div>
+
+                            </div>
+                        </div>
+                    <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="password">Password: </label>
+                                    <input type="text" class="form-control" id="password" placeholder="Enter your password: ">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-default" type="button"  aria-expanded="true">
+                        Login
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Reservation Owner -->
+<section class="sectionProp" id="reservationSection">
+    <div class="container" id="ownerResContainer">
+
+        <div id="contentOwnRes" class="tab-content">
+            <div class="tab-pane active" >
+                <ul class="nav nav-tabs nav-justified">
+                    <li class="active">
+                        <a href="#tab-reservation" data-toggle="tab">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            <span class="tab-text">Reservations</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Reservation" id="inputSearch">
+                    <div class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+
+                <form margin="2px" role="form">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th>CNF#</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>#</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>DC83CD</td>
+                            <td>Sabidur Rahman</td>
+                            <td>05/02/2015 1:30PM</td>
+                            <td>4</td>
+                            <td>
+                                <button class="btn btn-primary" title="Open Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-default" type="button"  aria-expanded="true">
+                        Next
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Seating -->
+<section class="sectionProp" id="seatingSection">
+    <div class="container" id="ownerSeating">
+
+        <div id="contentSeating" class="tab-content">
+            <div class="tab-pane active" >
+                <ul class="nav nav-tabs nav-justified">
+                    <li>
+                        <a href="#tab-seating" data-toggle="tab">
+                            <span class="glyphicon glyphicon-th"></span>
+                            <span class="tab-text">Seating</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <form role="form">
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th>CNF#</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>#</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>DC83CD</td>
+                            <td>Sabidur Rahman</td>
+                            <td>05/02/2015 1:30PM</td>
+                            <td>4</td>
+                            <td>
+                                <button class="btn btn-primary" title="Open Details">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                    <span class="btn-text">Details</span>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button class="btn btn-default" type="button"   aria-expanded="true">
+                        Next
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Profile -->
+<section class="sectionProp" id="profileSection">
+    <div class="container" >
+
+        <div id="profileContent" class="tab-content">
+            <div class="tab-pane active" >
+                <ul class="nav nav-tabs nav-justified">
+                    <li>
+                        <a href="#tab-owner" data-toggle="tab">
+                            <span class="glyphicon glyphicon-list"></span>
+                            <span class="tab-text">Profile</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="restName">Name of Restaurant:</label>
+                        <input type="text" class="form-control" id="restName" placeholder="Kitchen Restaurant">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="restAddress">Address:</label>
+                                <input type="text" class="form-control" id="restAddress" placeholder="12443 Tech Ridge Blvd, Austin, TX 78753 ">
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="openTime">Opening Time:</label>
+                                <input type="time" class="form-control" id="openTime" placeholder="11:00 AM">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="closeTime">Closing Time:</label>
+                                <input type="time" class="form-control" id="closeTime" placeholder="10:00 PM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="restEmail">Email:</label>
+                                <input type="email" class="form-control" id="restEmail" placeholder="kitchen@domain.com">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="restPhone">Phone:</label>
+                                <input type="tel" class="form-control" id="restPhone" placeholder="210-843-5491">
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="btn btn-default" type="button"   aria-expanded="true">
+                        Edit Profile
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- App Settings -->
+<section class="sectionProp" id="appSettingsSection">
+    <div class="container" >
+
+        <div  class="tab-content">
+            <div class="tab-pane active" >
+                <ul class="nav nav-tabs nav-justified">
+                    <li>
+                        <a href="#tab-owner" data-toggle="tab">
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span class="tab-text">App Settings</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <form role="form">
+                    <div class="form-group">
+                        <label for="checkAssain">Auto Assign Tables:</label>
+                        <input type="checkbox" class="form-control" id="checkAssain" checked="true">
+                    </div>
+
+                    <button class="btn btn-default" type="button" id="settingsBtn"  aria-expanded="true">
+                        Edit Settings
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contacts List  -->
+<section class="sectionProp" id="contactsSection">
+    <div class="container" id="contactsContainer">
+
+        <div id="contacts" class="tab-content">
+            <div class="tab-pane active" >
+                <ul class="nav nav-tabs nav-justified">
+                    <li>
+                        <a href="#tab-owner" data-toggle="tab">
+                            <span class="glyphicon glyphicon-cog"></span>
+                            <span class="tab-text">Contact List</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <form role="form">
+                    <div id="here_table_contact"></div>
+  <!-- 
+                    <table class="table table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th>CNF#</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Contact</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>DC83CD</td>
+                            <td>Sabidur Rahman</td>
+                            <td>05/02/2015 1:30PM</td>
+                            <td>603-843-5634</td>
+                        </tr>
+                        </tbody>
+                    </table>
+        -->
+                    <button class="btn btn-default" type="button" id="loginBtn"  aria-expanded="true">
+                        Next
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- image -->
+<section  id="imageSection">
+    <div class="container" id="appContainer">
+
+        <div id="appContent" class="tab-content">
+            <div class="tab-pane active" >
+
+                <form role="form">
+                <img class="img-header" src="images/imgHeader.jpg">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- menu -->
+<section class="sectionProp"  id="menuSection">
+    <div class="container" >
+
+        <div  class="tab-content">
+            <div class="tab-pane active" >
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <img id="menuImg" src="images/menu.jpg">
+                    </div>
+
+                </div>
+
+             </div>
+        </div>
+    </div>
+</section>
+
+
+<section  id="footer">
+    <div class="container">
+         <form role="form" id="footerForm">
+            <p class="address"><a target="_blank" href="https://www.google.com/maps/dir/%27%27/12443+Tech+Ridge+Blvd,+Austin,+TX+78753/@30.39655,-97.6669014,17z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x8644ced296246637:0x749609cf748cd858!2m2!1d-97.6647556!2d30.39655"> 12443 Tech Ridge Blvd  </a></p>
+            <p class="phone">   <tb/>Phone: 210-843-5491</p>
+          </form>
+    </div>
+</section>
+
+<!--
+ http://getbootstrap.com/components/#alerts
+ <img src="images/imgHeader.jpg"  class="img-header" alt="Header image">
+
+jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="scripts/bootstrap.min.js"></script>
+<script src="scripts/myJS.js"></script>
+
+
+
+
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="scripts/app.js"></script>
+	<script src="scripts/angular-route.min.js"></script>
+	<script src="scripts/angular-route.min.js.map"></script>
+	<script src="scripts/angular-messages.min.js"></script>
+	
+
+</body>
+</html>

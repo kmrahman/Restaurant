@@ -1,0 +1,1 @@
+Welcome {{hCtrl.params.name}} from {{hCtrl.params.city}}

@@ -1,0 +1,77 @@
+(function() {
+
+  angular.module('plunker', ['ngRoute']);
+
+  angular.module('plunker').config(['$routeProvider', moduleConfig]);
+
+  function moduleConfig($routeProvider) {
+    $routeProvider
+      .when('/home/:name/:city', {
+        templateUrl: 'home.html', //url of the template
+        controller: 'HomeCtrl', //name of the controller
+        controllerAs: 'hCtrl' //how it should be referred in the template
+      })
+      .when('/profile', {
+        templateUrl: 'profile.html', //url of the template
+        controller: 'ProfileCtrl', //name of the controller
+        controllerAs: 'pCtrl', //how it should be referred in the template
+        resolve: {
+          user: ['$http', userLoader]
+        }
+      })
+      .when('/login', {
+        templateUrl: 'login.html', //url of the template
+        controller: 'LoginCtrl', //name of the controller
+        controllerAs: 'lCtrl' //how it should be referred in the template
+      })
+      .otherwise({
+        redirectTo: '/login'
+      });
+  }
+  
+  function userLoader ($http) {
+    return $http({
+      url: 'http://httpbin.org/get',
+      method: 'GET'
+    });
+  }
+
+  //controllers should be in their own .js files
+  angular.module('plunker').controller('HomeCtrl', HomeCtrl);
+  angular.module('plunker').controller('ProfileCtrl', ProfileCtrl);
+  angular.module('plunker').controller('LoginCtrl', LoginCtrl);
+
+  function HomeCtrl($routeParams) {
+
+    var hCtrl = this;
+    hCtrl.params = $routeParams;
+    console.log('HomeCtrl');
+  }
+
+
+
+
+  function ProfileCtrl($routeParams, user) {
+
+    var pCtrl = this;
+
+    console.log('ProfileCtrl');
+    console.log(user.data);
+    console.log($routeParams);
+    pCtrl.user = user.data.headers;
+  }
+  
+  
+  
+  
+
+  function LoginCtrl() {
+
+    var lCtrl = this;
+
+    console.log('LoginCtrl');
+  }
+
+
+
+})();

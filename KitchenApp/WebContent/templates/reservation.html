@@ -1,0 +1,71 @@
+    <div class="container" id="home">
+        <ul class="nav nav-tabs nav-justified">
+            <li ><a href="#guest" data-toggle="tab">Reservation</a>
+            </li>
+        </ul>
+        <div id="content" class="tab-content">
+            <div class="tab-pane active" id="guest">
+                <form role="form">
+                    <div class="alert alert-success" display="none" id="reserveSuccess" role="alert">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reserveName">Name:</label>
+                        <input type="text" class="form-control" id="reserveName" placeholder="Enter Full Name">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveDate">Date:</label>
+                                <input type="date" class="form-control" id="reserveDate" placeholder="MM/DD/YYYY">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveTime">Time:</label>
+                                <input type="time" class="form-control" id="reserveTime" placeholder="HH:MM">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reserveEmail">Email:</label>
+                                <input type="email" class="form-control" id="reserveEmail" placeholder="example@domain.com">
+                            </div>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="reservePhone">Phone:</label>
+                                <input type="tel" class="form-control" id="reservePhone" placeholder="Enter Your Phone">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="reserveSize">Party Size:</label>
+                                <input type="number" class="form-control" id="reserveSize" placeholder="# Guests">
+                            </div>
+                        </div>
+                        <div class="col-sm-9">
+                            <div class="form-group">
+                                <label for="reserveComment">Comments:</label>
+                                <input type="email" class="form-control" id="reserveComment" placeholder="e.g. Birthday, Anniversary etc.">
+                            </div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-default" type="button" id="btn_addReservation" aria-expanded="true">
+                        Reserve
+                    </button>
+
+
+                </form>
+            </div>
+        </div>
+    </div>

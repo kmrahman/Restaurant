@@ -2,6 +2,23 @@
  * 
  */
 "use strict";
+(function(){
+	angular.module("kitchen", ["ngroute"]);
+	angular.module('kitchen').config(['$routeProvider', moduleConfig]);
+	function moduleConfig($routeProvider){
+	    $routeProvider
+	        .when('/contactUs', {
+	            templateUrl: 'contactUs.html', //url of the template
+	            controller: 'ContactCtrl',  //name of the controller
+	          controllerAs: 'cCtrl' //how it should be referred in the template
+	        })
+	        
+	        .otherwise({
+	            redirectTo: '/contactUs' //redirects to this path if nothing matches
+	        });
+	 }
+})();
+
 
 (function() {
 
